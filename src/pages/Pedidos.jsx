@@ -1,19 +1,19 @@
 // Front-end (React)
 import React, { useContext, useEffect, useState } from 'react';
 // Estilos específicos da página de pedidos
-import { ContainerPedido, ContainerPedidos, ConteudoPedidos, DataPedido, LinkDetalhesPedidos, PedidoAceito, VerificacaoEntregue } from '../styles/PedidosStyles';
-import { Subtitulo, Titulo, TxtGerais } from '../styles/GlobalStyles';
+import { ContainerPedido, ContainerPedidos, ConteudoPedidos, DataPedido, LinkDetalhesPedidos, PedidoAceito, VerificacaoEntregue } from '../styles/PedidosStyles.js';
+import { Subtitulo, Titulo, TxtGerais } from '../styles/GlobalStyles.js';
 // Contexto do usuário (informações do usuário logado)
-import { UserContext } from '../router/userContext';
+import { UserContext } from '../router/userContext.jsx';
 // Axios para fazer requisições HTTP
 import axios from 'axios';
 // Estilos do menu do usuário
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles.js';
 // Ícones para controlar o menu de usuário
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
-import { formatDateBrDefault } from '../services/Functions';
-import { TituloPedido } from '../styles/PedidoStyles';
-import { BotaoPaginacao, ContainerPaginacao } from '../styles/ProdutoStyles';
+import { formatDateBrDefault } from '../services/Functions.js';
+import { TituloPedido } from '../styles/PedidoStyles.js';
+import { BotaoPaginacao, ContainerPaginacao } from '../styles/ProdutoStyles.js';
 
 function Pedidos() {
   const { user, logout } = useContext(UserContext);

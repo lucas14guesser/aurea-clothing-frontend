@@ -1,0 +1,1 @@
+import{j as o}from"./GlobalStyles-Dqpp29B9.js";import{M as a,a as s}from"./ModalsStyles-CkMaqKjX.js";function e({children:r}){return o.jsx(a,{children:o.jsx(s,{onClick:t=>t.stopPropagation(),style:{width:"30rem"},children:r})})}export{e as M};

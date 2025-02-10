@@ -1,0 +1,1 @@
+import{j as o,C as n,T as r,g as e}from"./GlobalStyles-Dqpp29B9.js";function a(){return o.jsxs(n,{children:[o.jsx(r,{style:{marginBottom:"4rem"},children:"Erro 404 - Página não encontrada"}),o.jsx(e,{children:"A página que você solicitou não foi encontrada ou não existe. Por favor, procure por outra página ou tente novamente mais tarde"})]})}export{a as P};

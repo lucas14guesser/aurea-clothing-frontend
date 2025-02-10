@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BtnLinkAdminDash, BtnMenuUser, ContainerAdminDashboard, ContainerDashBoard, ContainerDashBoardColumn, ContainerPainelAdmin, DivColuna, DivFlexBtn, DivLinha, DivLinhaMb2, EditarDashBoard, Informacoes, InputUserDash, LinkMail, MenuUser, PainelAdmin, RowMenuTitle, SubtituloUserDash, TituloDash, TxtHamburguerUserDash } from '../styles/UserDashboardStyles.';
+import { BtnLinkAdminDash, BtnMenuUser, ContainerAdminDashboard, ContainerDashBoard, ContainerDashBoardColumn, ContainerPainelAdmin, DivColuna, DivFlexBtn, DivLinha, DivLinhaMb2, EditarDashBoard, Informacoes, InputUserDash, LinkMail, MenuUser, PainelAdmin, RowMenuTitle, SubtituloUserDash, TituloDash, TxtHamburguerUserDash } from '../styles/../styles/UserDashboardStyles.js';
 import { StyledError, StyledSuccess, Titulo, TxtGerais } from '../styles/GlobalStyles';
 import ModalUserProfile from '../components/functions/modals/ModalUserProfile';
 import { ButtonModal, ModalInternalContainer } from '../styles/ModalsStyles';

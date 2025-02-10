@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 // Importação de componentes estilizados para estilizar a interface do usuário
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { Titulo } from '../styles/GlobalStyles';
 import { ListaPedidos } from '../styles/PedidosAdminStyle';
 // Importação de axios para fazer requisições HTTP

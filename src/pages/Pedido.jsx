@@ -8,7 +8,7 @@ import {
     LinkMail,
     MenuUser,
     RowMenuTitle
-} from '../styles/UserDashBoardStyles'; // Importa estilos específicos para o dashboard do usuário
+} from '../styles/UserDashboardStyles'; // Importa estilos específicos para o dashboard do usuário
 import {
     LinkVoltar,
     Subtitulo,

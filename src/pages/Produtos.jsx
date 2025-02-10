@@ -7,7 +7,7 @@ import { BsPencil } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { UserContext } from '../router/userContext'; // Contexto de usuário para obter informações do usuário atual
 import { CiSearch } from 'react-icons/ci';

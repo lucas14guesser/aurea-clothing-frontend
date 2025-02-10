@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { BtnMenuUser, ContainerDashBoard, FormRedefinir, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, ContainerDashBoard, FormRedefinir, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { StyledError, StyledSuccess, Titulo } from '../styles/GlobalStyles';
 import { UserContext } from '../router/userContext';

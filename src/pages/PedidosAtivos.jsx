@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { Titulo, TxtGerais } from '../styles/GlobalStyles';
 import { ListaPedidos } from '../styles/PedidosAdminStyle';
 import axios from 'axios'; // Para fazer requisições HTTP

@@ -10,7 +10,7 @@ import {
 } from '../styles/GlobalStyles'; // Importa estilos globais reutilizáveis
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io'; // Importa ícones para a interface
 import { UserContext } from '../router/userContext'; // Importa contexto para informações do usuário
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import ModalTroca from '../components/functions/modals/ModalTroca';
 import { ButtonModalInternal, FlexRowModalFlexSt, ModalInternalContainerFlex, Star, StarsContainer } from '../styles/ModalsStyles';
 import { BtnModalAvaName, DivAvaName, FlexRowLabelInputLoginCadastro, InputLoginCadastro, LabelLoginCadastro } from '../styles/ContaUserStyles';

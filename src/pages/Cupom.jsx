@@ -5,7 +5,7 @@ import { MdOutlineAttachMoney } from "react-icons/md";
 import { AiOutlineProduct } from "react-icons/ai";
 import { BsPencil, BsCalendar3 } from "react-icons/bs";
 import axios from 'axios';
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { UserContext } from '../router/userContext'; // Contexto de usuário para obter informações do usuário atual
 import { CiSearch } from 'react-icons/ci';

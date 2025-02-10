@@ -4,7 +4,7 @@ import { ButtonProdutos, ContainerCrud, ContainerFuncao, ContainerFuncoes, Conta
 import { BsPencil } from "react-icons/bs";
 import { IoIosCodeDownload } from "react-icons/io";
 import axios from 'axios';
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles';
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { UserContext } from '../router/userContext'; // Contexto de usuário para obter informações do usuário atual
 import { CiSearch } from 'react-icons/ci';

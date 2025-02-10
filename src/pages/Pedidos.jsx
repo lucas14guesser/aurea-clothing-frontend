@@ -8,7 +8,7 @@ import { UserContext } from '../router/userContext.jsx';
 // Axios para fazer requisições HTTP
 import axios from 'axios';
 // Estilos do menu do usuário
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles.js';
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles.js';
 // Ícones para controlar o menu de usuário
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { formatDateBrDefault } from '../services/Functions.js';

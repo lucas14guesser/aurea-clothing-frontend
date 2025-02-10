@@ -3,7 +3,7 @@ import { Container, Titulo, TxtGerais } from '../styles/GlobalStyles.js' // Comp
 import { ButtonProdutos, ContainerCrud, ContainerFuncao, ContainerFuncoes, ContainerGeralFuncao, FileNameProduto, ImgTableBanners, InputProdutos, InputProdutosFileWrapper, LabelInputProdutos, LabelProdutos, ListaProdutos, SectionBtnProdutos } from '../styles/ProdutosStyle.js' // Componentes de estilo específicos para a página de produtos
 import { AiOutlineFileImage, AiOutlineProduct } from "react-icons/ai"; // Ícones específicos para imagens e produtos
 import axios from 'axios'; // Biblioteca para fazer requisições HTTP
-import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashBoardStyles.js'; // Componentes de estilo do menu do usuário
+import { BtnMenuUser, LinkMail, MenuUser, RowMenuTitle } from '../styles/UserDashboardStyles.js'; // Componentes de estilo do menu do usuário
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io'; // Ícones de menu dropdown
 import { UserContext } from '../router/userContext.jsx'; // Contexto do usuário para obter dados e funções relacionadas ao usuário
 import { CiSearch } from 'react-icons/ci'; // Ícone de busca

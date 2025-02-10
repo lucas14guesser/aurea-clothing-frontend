@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import { UserContext } from '../../../router/userContext';
 import axios from 'axios';
-import { ContainerDashBoard, FormRedefinir } from '../../../styles/UserDashBoardStyles';
+import { ContainerDashBoard, FormRedefinir } from '../../../styles/UserDashboardStyles';
 import { StyledError, StyledSuccess, Titulo } from '../../../styles/GlobalStyles';
 import { FlexRowLabelInputLoginCadastro, InputLoginCadastro, LabelLoginCadastro, LinkForgotPass } from '../../../styles/ContaUserStyles';
 import { RiLockPasswordLine } from 'react-icons/ri';

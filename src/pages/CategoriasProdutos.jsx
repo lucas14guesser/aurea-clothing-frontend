@@ -20,7 +20,7 @@ export const CategoriasProdutos = () => {
   useEffect(() => {
     const fetchCategoria = async () => {
       try {
-        const resp = await axios.get(`http://localhost:3001/aurea/produto/categoria/${categoria}`);
+        const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/categoria/${categoria}`);
 
         if (!resp.data.result || resp.data.result.length === 0) {
           throw new Error('Categoria não encontrada.');
@@ -76,7 +76,7 @@ const SubCategoriasProdutos = () => {
   useEffect(() => {
     const fetchSubcategoria = async () => {
       try {
-        const resp = await axios.get(`http://localhost:3001/aurea/produto/subcategoria/${subcategoria}`);
+        const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/subcategoria/${subcategoria}`);
 
         if (!resp.data.result || resp.data.result.length === 0) {
           throw new Error('Subcategoria não encontrada.');

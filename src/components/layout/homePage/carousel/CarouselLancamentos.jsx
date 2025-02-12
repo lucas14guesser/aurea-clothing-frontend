@@ -80,7 +80,7 @@ function CarouselLancamentos() {
     const fetchDadosProdutos = async () => {
       try {
         // Fazendo a requisição à API para obter os produtos
-        const resp = await axios.get('http://localhost:3001/aurea/produtos');
+        const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produtos');
         const produtos = resp.data.result;
         setProdutos(produtos);
 
@@ -116,7 +116,7 @@ function CarouselLancamentos() {
       }
 
       // Verifica no backend se o produto já está na lista "Amei" do usuário
-      const resp = await axios.get(`http://localhost:3001/aurea/lista-amei/${id_user}`);
+      const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}`);
       const listaBackend = resp.data;
 
       // Verifica se o produto já está na lista "Amei" do backend
@@ -125,7 +125,7 @@ function CarouselLancamentos() {
       }
 
       // Envia o pedido para o backend para adicionar o produto à lista "Amei"
-      const response = await axios.post('http://localhost:3001/aurea/lista-amei', {
+      const response = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei', {
         id_user: id_user,
         id_produto: produto.id_produto, // id_produto extraído de ProdutoGeral
       });
@@ -156,7 +156,7 @@ function CarouselLancamentos() {
       const id_user = user.id_user;
 
       // Faz a requisição para remover do backend e do localStorage
-      await axios.delete(`http://localhost:3001/aurea/lista-amei/${id_user}/${produtoId}`);
+      await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}/${produtoId}`);
 
       // Atualiza o localStorage
       const listaAtual = JSON.parse(localStorage.getItem(`listaAmei_${id_user}`)) || [];
@@ -195,14 +195,14 @@ function CarouselLancamentos() {
           return;
         }
 
-        const resp = await axios.get(`http://localhost:3001/aurea/carrinho/${id_user}`);
+        const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${id_user}`);
         const listaBackend = resp.data;
 
         if (listaBackend.some((item) => item.id_produto === produto.id_produto)) {
           return; // Produto já está no carrinho no backend
         }
 
-        await axios.post('http://localhost:3001/aurea/carrinho', {
+        await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho', {
           id_user: id_user,
           id_produto: produto.id_produto,
           qtd_produto_carrinho: 1,
@@ -227,7 +227,7 @@ function CarouselLancamentos() {
   const handleRemoveFromCarrinho = async (produtoId) => {
     try {
       // Faz a requisição para o backend para remover o produto do carrinho
-      await axios.delete(`http://localhost:3001/aurea/carrinho/${user.id_user}/${produtoId}`);
+      await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}/${produtoId}`);
 
       // Atualiza o localStorage
       const listaAtual = JSON.parse(localStorage.getItem(`carrinho${user.id_user}`)) || [];
@@ -265,7 +265,7 @@ function CarouselLancamentos() {
     };
 
     try {
-      const resp = await axios.post(`http://localhost:3001/aurea/aviso/${produtoAviso.nome_produto}`, dadosEnvio);
+      const resp = await axios.post(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/aviso/${produtoAviso.nome_produto}`, dadosEnvio);
 
       if (resp.status === 200 && resp.data.message === 'E-mail enviado com sucesso!') {
         alert('E-mail enviado com sucesso!');

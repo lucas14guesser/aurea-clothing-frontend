@@ -43,10 +43,10 @@ function PedidosAtivos() {
     useEffect(() => {
         const fetchDados = async () => {
             try {
-                const respPedidos = await axios.get('http://localhost:3001/aurea/pedidos');
+                const respPedidos = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedidos');
                 setPedidos(respPedidos.data.result);
 
-                const respClientes = await axios.get('http://localhost:3001/aurea/usuarios');
+                const respClientes = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuarios');
                 setClientes(respClientes.data.result);
             } catch (error) {
                 setError('Erro ao obter dados.');
@@ -62,7 +62,7 @@ function PedidosAtivos() {
                 const allItens = await Promise.all(
                     pedidosEmAndamento.map(async (pedido) => {
                         if (!itensPedido[pedido.id_pedido]) {
-                            const respItens = await axios.get(`http://localhost:3001/aurea/itens-pedido/${pedido.id_pedido}`);
+                            const respItens = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/itens-pedido/${pedido.id_pedido}`);
                             return { id_pedido: pedido.id_pedido, itens: respItens.data.result };
                         }
                         return null;

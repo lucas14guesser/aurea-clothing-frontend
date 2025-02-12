@@ -27,7 +27,7 @@ function Pedidos() {
     const fetchDadosPedidos = async () => {
       try {
         // Requisição para buscar os pedidos do usuário com o id_user
-        const resp = await axios.get(`http://localhost:3001/aurea/pedido/user/${user.id_user}`);
+        const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/user/${user.id_user}`);
         const pedidos = resp.data.result;
 
         if (Array.isArray(pedidos)) {

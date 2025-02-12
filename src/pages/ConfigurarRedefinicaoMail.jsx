@@ -21,7 +21,7 @@ function ConfigurarRedefinicaoMail() {
         setLoading(true);
 
         try {
-            const resp = await axios.post(`http://localhost:3001/aurea/usuario/${user.id_user}/solicitar-redefinicao-mail`);
+            const resp = await axios.post(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/${user.id_user}/solicitar-redefinicao-mail`);
 
             if (resp.data.error) {
                 console.error('Erro na resposta:', resp.data.error);

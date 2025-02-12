@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
             try {
                 const token = localStorage.getItem('token');
                 if (token) {
-                    const response = await axios.get('http://localhost:3001/lex/auth/check', {
+                    const response = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/auth/check', {
                         withCredentials: true,
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -70,7 +70,7 @@ export const UserProvider = ({ children }) => {
 
     const fetchUserData = async (email_user) => {
         try {
-            const resp = await axios.get(`http://localhost:3001/aurea/usuario/mail/${email_user}`);
+            const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/mail/${email_user}`);
             if (resp.data.result.length > 0) {
                 setUser(resp.data.result[0]);
                 setUserRole(resp.data.result[0].funcao_user);
@@ -115,7 +115,7 @@ export const UserProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await axios.post('http://localhost:3001/aurea/auth/logout', {}, { withCredentials: true });
+            await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/auth/logout', {}, { withCredentials: true });
             setUserEmail('');
             setIsAuthenticated(false);
             setUser(null);

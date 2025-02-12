@@ -37,7 +37,7 @@ function RedefinirMail() {
         }
 
         try {
-            const resp = await axios.put(`http://localhost:3001/aurea/usuario/mail/redefinir-mail`, {
+            const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/mail/redefinir-mail`, {
                 token,
                 email_user: emailRed
             });

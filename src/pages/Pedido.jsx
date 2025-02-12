@@ -52,7 +52,7 @@ function Pedido() {
 
         try {
             // Faz uma requisição PUT para atualizar o status do pedido no servidor
-            const resp = await axios.put(`http://localhost:3001/aurea/pedido/${id_pedido}`, {
+            const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/${id_pedido}`, {
                 status_pedido: alterarStatus // Envia o novo status no corpo da requisição
             });
 
@@ -84,12 +84,12 @@ function Pedido() {
         const fetchDadosPedidoPorID = async () => {
             try {
                 // Faz uma requisição para obter os detalhes do pedido pelo ID
-                const resp = await axios.get(`http://localhost:3001/aurea/pedido/${id_pedido}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/${id_pedido}`);
                 setPedidos(resp.data.result); // Define os detalhes do pedido
 
                 if (resp.data.result) { // Verifica se há um pedido válido antes de buscar cliente
                     // Faz uma requisição para obter informações do cliente relacionado ao pedido
-                    const fetchCliente = await axios.get(`http://localhost:3001/aurea/usuario/${resp.data.result.id_user}`);
+                    const fetchCliente = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/${resp.data.result.id_user}`);
                     setClientes(fetchCliente.data.result);
                 }
             } catch (error) {
@@ -104,7 +104,7 @@ function Pedido() {
     useEffect(() => {
         const fetchProdutos = async () => {
             try {
-                const fetchProdutosResponse = await axios.get(`http://localhost:3001/aurea/produto/pedido/${id_pedido}`);
+                const fetchProdutosResponse = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/pedido/${id_pedido}`);
                 setProdutos(fetchProdutosResponse.data.result);
             } catch (error) {
                 console.error('Erro ao buscar produtos.', error);
@@ -119,7 +119,7 @@ function Pedido() {
     useEffect(() => {
         const fetchItensPedido = async () => {
             try {
-                const fetchItensPedidoResponse = await axios.get(`http://localhost:3001/aurea/itens-pedido/${id_pedido}`);
+                const fetchItensPedidoResponse = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/itens-pedido/${id_pedido}`);
                 setItensPedido(fetchItensPedidoResponse.data.result);
             } catch (error) {
                 console.error('Erro ao buscar produtos.', error);

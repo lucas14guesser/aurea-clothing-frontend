@@ -40,7 +40,7 @@ function CadastroForms() {
 
         try {
             // Enviando os dados para o backend via API
-            const resp = await axios.post('http://localhost:3001/aurea/usuario', DadosUsuario);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario', DadosUsuario);
 
             // Caso a resposta seja bem-sucedida (status 200 ou 201)
             if (resp.status === 201 || resp.status === 200) {

@@ -71,7 +71,7 @@ function Banners() {
 
     try {
       // Envia a imagem para o servidor usando axios (POST)
-      const resp = await axios.post('http://localhost:3001/aurea/banner', formDataBanner, {
+      const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner', formDataBanner, {
         headers: {
           'Content-Type': 'multipart/form-data', // Indica que estamos enviando arquivos
         },
@@ -98,7 +98,7 @@ function Banners() {
 
     try {
       // Envia uma requisição DELETE para o servidor
-      const resp = await axios.delete(`http://localhost:3001/aurea/banner/${idBanner}`);
+      const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner/${idBanner}`);
       if (resp.data.result) {
         setIdBanner(''); // Limpa o campo de ID após a exclusão
         alert('Banner excluído com sucesso!'); // Mensagem de sucesso
@@ -115,7 +115,7 @@ function Banners() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const resp = await axios.get('http://localhost:3001/aurea/banners'); // Requisição GET para obter banners
+        const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banners'); // Requisição GET para obter banners
         setBanners(resp.data.result); // Armazena os banners no estado
         setFilterBanner(resp.data.result); // Armazena banners filtrados inicialmente (sem filtro)
       } catch (error) {
@@ -228,7 +228,7 @@ function Banners() {
                       <td>{banner.id_banner}</td>
                       <td>
                         <ImgTableBanners
-                          src={`http://localhost:3001/bannerUpload/${banner.img_banner}`}
+                          src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/bannerUpload/${banner.img_banner}`}
                           alt={banner.nome_banner}
                           title={banner.nome_banner}
                         />

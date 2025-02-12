@@ -85,7 +85,7 @@ function Produtos() {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const resp = await axios.get('http://localhost:3001/aurea/produtos');
+        const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produtos');
         setProdutos(resp.data.result);
         setFilterProduto(resp.data.result);
       } catch (error) {
@@ -122,7 +122,7 @@ function Produtos() {
     formData.append('subcategoria_produto', subcategoriaProduto);
 
     try {
-      const resp = await axios.post('http://localhost:3001/aurea/produto', formData, {
+      const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto', formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Importante para envio de arquivos
         },
@@ -156,7 +156,7 @@ function Produtos() {
     }
 
     try {
-      const resp = await axios.delete(`http://localhost:3001/aurea/produto/${idProduto}`);
+      const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${idProduto}`);
       if (resp.data.result) {
         setIdProduto('');
         alert('Produto excluído com sucesso!');
@@ -179,7 +179,7 @@ function Produtos() {
     };
 
     try {
-      const resp = await axios.put(`http://localhost:3001/aurea/produto/${idPromocao}`, dataPromocao);
+      const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${idPromocao}`, dataPromocao);
       if (resp.data.result) {
         alert('Produto em promoção!');
         setIdPromocao('');
@@ -205,7 +205,7 @@ function Produtos() {
     };
 
     try {
-      const resp = await axios.put(`http://localhost:3001/aurea/produto/${idDespromocao}`, dataDespromocao);
+      const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${idDespromocao}`, dataDespromocao);
       if (resp.data.result) {
         alert('Produto não está mais em promoção.');
         setCategoriaDespromocao('');
@@ -565,7 +565,7 @@ function Produtos() {
                       {produto.id_produto}
                     </Link>
                   </td>
-                  <td><ImgTable src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} /></td>
+                  <td><ImgTable src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} /></td>
                   <td>{produto.nome_produto}</td>
                   <td>{produto.categoria_produto}</td>
                   <td>

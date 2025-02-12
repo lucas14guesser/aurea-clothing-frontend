@@ -13,7 +13,7 @@ function Banner() {
         const fetchDadosBanners = async () => {
             try {
                 // Requisição GET para obter os banners do servidor
-                const resp = await axios.get('http://localhost:3001/aurea/banners');
+                const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banners');
                 setBanners(resp.data.result); // Salvando os banners no estado
             } catch (error) {
                 console.error('Erro ao listar banners.', error); // Tratamento de erro caso a requisição falhe
@@ -42,7 +42,7 @@ function Banner() {
                 {Array.isArray(banners) && banners.map((banner) => {
                     return (
                         <ImagemCarouselBanner
-                            src={`http://localhost:3001/bannerUpload/${banner.img_banner}`}
+                            src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/bannerUpload/${banner.img_banner}`}
                             alt={banner.nome_banner}
                             key={banner.id_banner}
                         />

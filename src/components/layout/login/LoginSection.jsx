@@ -54,7 +54,7 @@ function LoginSection() {
 
         try {
             // Faz uma requisição POST para o servidor para realizar o login
-            const resp = await axios.post('http://localhost:3001/aurea/login', dadosLogin, {
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/login', dadosLogin, {
                 withCredentials: true // Inclui cookies, caso necessário para autenticação
             });
 
@@ -97,7 +97,7 @@ function LoginSection() {
         }
 
         try {
-            const resp = await axios.post('http://localhost:3001/aurea/usuario/senha/esqueci-senha', dataRef);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/senha/esqueci-senha', dataRef);
 
             if (resp.data.error) {
                 setSuccessRef(''); // Limpa qualquer mensagem de sucesso

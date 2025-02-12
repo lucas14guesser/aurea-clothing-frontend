@@ -73,7 +73,7 @@ function Carrinho() {
     useEffect(() => {
         const fetchCarrinho = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/aurea/carrinho/${user.id_user}`);
+                const response = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}`);
                 if (response.status === 200) {
                     setProdutosCarrinho(response.data);
                 } else {
@@ -104,7 +104,7 @@ function Carrinho() {
             try {
                 if (user && user.id_user) {
                     // Requisição para buscar o carrinho do usuário
-                    const respCarrinho = await axios.get(`http://localhost:3001/aurea/carrinho/${user.id_user}`);
+                    const respCarrinho = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}`);
                     const carrinho = respCarrinho.data;
 
                     if (Array.isArray(carrinho)) {
@@ -112,7 +112,7 @@ function Carrinho() {
                         const carrinhoComProdutos = await Promise.all(
                             carrinho.map(async (item) => {
                                 try {
-                                    const respProduto = await axios.get(`http://localhost:3001/aurea/produto/${item.id_produto}`);
+                                    const respProduto = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${item.id_produto}`);
                                     return { ...item, produto: respProduto.data.result }; // Adiciona os dados do produto ao item do carrinho
                                 } catch (error) {
                                     return { ...item, produto: null }; // Caso o produto não seja encontrado
@@ -134,7 +134,7 @@ function Carrinho() {
         const fetchDadosCupomNome = async () => {
             if (nomeCupom.trim()) { // Verifica se o campo nomeCupom não está vazio
                 try {
-                    const resp = await axios.get(`http://localhost:3001/aurea/listar-cupom/${nomeCupom}`);
+                    const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/listar-cupom/${nomeCupom}`);
                     if (resp.data.result) {
                         setCupom(resp.data.result); // Atualiza o estado com o cupom encontrado
                     } else {
@@ -154,7 +154,7 @@ function Carrinho() {
     const handleRemoveFromCarrinho = async (produtoId) => {
         try {
             // Faz a requisição para o backend para remover o produto do carrinho
-            const response = await axios.delete(`http://localhost:3001/aurea/carrinho/${user.id_user}/${produtoId}`);
+            const response = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}/${produtoId}`);
 
             if (response.status === 200) {
                 // Atualiza o estado após remoção no backend
@@ -182,7 +182,7 @@ function Carrinho() {
 
         try {
             // Faz a requisição para buscar os dados atualizados do carrinho
-            const response = await axios.get(`http://localhost:3001/aurea/carrinho/${user.id_user}`);
+            const response = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}`);
 
             if (response.status === 200) {
                 const carrinho = response.data;
@@ -193,7 +193,7 @@ function Carrinho() {
                     const carrinhoComProdutos = await Promise.all(
                         carrinho.map(async (item) => {
                             try {
-                                const respProduto = await axios.get(`http://localhost:3001/aurea/produto/${item.id_produto}`);
+                                const respProduto = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${item.id_produto}`);
                                 return { ...item, produto: respProduto.data.result }; // Adiciona os dados do produto ao item do carrinho
                             } catch (error) {
                                 return { ...item, produto: null }; // Caso o produto não seja encontrado
@@ -236,7 +236,7 @@ function Carrinho() {
     const obterEnderecoPorCep = async (cep) => {
         try {
             // Faz uma requisição GET para o backend para obter o endereço baseado no CEP fornecido
-            const response = await axios.get(`http://localhost:3001/aurea/obter-endereco/${cep}`);
+            const response = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/obter-endereco/${cep}`);
 
             // Retorna o endereço completo obtido da resposta
             return response.data;
@@ -307,7 +307,7 @@ function Carrinho() {
                 };
 
                 // Enviando a requisição para o backend
-                const resp = await axios.post("http://localhost:3001/aurea/calcular-frete", dadosFrete);
+                const resp = await axios.post("https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/calcular-frete", dadosFrete);
 
                 // Verifique se há resultados e acesse o primeiro item
                 if (resp.data && resp.data.length > 0) {
@@ -463,7 +463,7 @@ function Carrinho() {
 
             // Envia o valor total, frete e desconto para o backend
             const response = await axios.put(
-                `http://localhost:3001/aurea/carrinho/valor-total/${idUser}`,
+                `https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/valor-total/${idUser}`,
                 { frete: valorFrete, desconto: descontoValor } // Envia o valor do desconto calculado
             );
 
@@ -489,7 +489,7 @@ function Carrinho() {
             }
 
             // Atualiza a quantidade no backend
-            const response = await axios.put(`http://localhost:3001/aurea/carrinho/put/${idCarrinho}`, {
+            const response = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/put/${idCarrinho}`, {
                 qtd_produto_carrinho: novaQuantidade,
             });
 
@@ -521,7 +521,7 @@ function Carrinho() {
 
                 // Busca os produtos do carrinho no backend
                 const responseCarrinho = await axios.get(
-                    `http://localhost:3001/aurea/carrinho/${user.id_user}`
+                    `https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}`
                 );
                 if (responseCarrinho.status !== 200) {
                     throw new Error("Erro ao buscar o carrinho.");
@@ -535,7 +535,7 @@ function Carrinho() {
                 }
 
                 // Prepare os dados a serem enviados para o backend
-                const { data } = await axios.post("http://localhost:3001/aurea/create_preference", {
+                const { data } = await axios.post("https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/create_preference", {
                     items: [
                         {
                             id: "carrinho",
@@ -609,7 +609,7 @@ function Carrinho() {
                                             {item.produto ? (
                                                 <ContainerImgProduto>
                                                     <ImageProdutoCarrinho
-                                                        src={`http://localhost:3001/uploads/${item.produto.img_produto}`}
+                                                        src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${item.produto.img_produto}`}
                                                         alt={`Imagem do produto: ${item.produto.nome_produto}`}
                                                     />
                                                     <div>
@@ -650,7 +650,7 @@ function Carrinho() {
                                                     if (item.produto && item.produto.id_produto) {
                                                         // Faz a requisição para pegar a quantidade em estoque
                                                         try {
-                                                            const response = await axios.get(`http://localhost:3001/aurea/produto/${item.produto.id_produto}`);
+                                                            const response = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/${item.produto.id_produto}`);
                                                             const produtoEstoque = response.data.result;
 
                                                             // Se a quantidade desejada for maior do que o estoque disponível

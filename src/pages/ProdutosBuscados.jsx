@@ -89,8 +89,8 @@ function ProdutosBuscados() {
             try {
                 setLoading(true);
                 const [resNome, resCategoria] = await Promise.all([
-                    axios.get(`http://localhost:3001/aurea/busca/nome/${query}`),
-                    axios.get(`http://localhost:3001/aurea/busca/categoria/${query}`),
+                    axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/busca/nome/${query}`),
+                    axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/busca/categoria/${query}`),
                 ]);
 
                 const resultadosNome = resNome.data.result || [];
@@ -162,7 +162,7 @@ function ProdutosBuscados() {
             }
 
             // Verifica no backend se o produto já está na lista "Amei" do usuário
-            const resp = await axios.get(`http://localhost:3001/aurea/lista-amei/${id_user}`);
+            const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}`);
             const listaBackend = resp.data;
 
             // Verifica se o produto já está na lista "Amei" do backend
@@ -171,7 +171,7 @@ function ProdutosBuscados() {
             }
 
             // Envia o pedido para o backend para adicionar o produto à lista "Amei"
-            const response = await axios.post('http://localhost:3001/aurea/lista-amei', {
+            const response = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei', {
                 id_user: id_user,
                 id_produto: produto.id_produto, // id_produto extraído de ProdutoGeral
             });
@@ -202,7 +202,7 @@ function ProdutosBuscados() {
             const id_user = user.id_user;
 
             // Faz a requisição para remover do backend e do localStorage
-            await axios.delete(`http://localhost:3001/aurea/lista-amei/${id_user}/${produtoId}`);
+            await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}/${produtoId}`);
 
             // Atualiza o localStorage
             const listaAtual = JSON.parse(localStorage.getItem(`listaAmei_${id_user}`)) || [];
@@ -328,7 +328,7 @@ function ProdutosBuscados() {
                             currentItems.map((produto) => (
                                 <ListaItemProduto key={produto.id_produto}>
                                     {/* Exibe a imagem do produto, se houver */}
-                                    {produto.img_produto && <ImgProduto src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />}
+                                    {produto.img_produto && <ImgProduto src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />}
                                     <ContainerEspecificacoesProduto>
                                         {/* Exibe o nome do produto e seu preço */}
                                         {produto.nome_produto && <NomeProduto>{produto.nome_produto}</NomeProduto>}

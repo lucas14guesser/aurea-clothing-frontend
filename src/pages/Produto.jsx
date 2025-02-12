@@ -47,7 +47,7 @@ function Produto() {
     useEffect(() => {
         const fetchProdutoPorNome = async () => {
             try {
-                const resp = await axios.get(`http://localhost:3001/aurea/produto/nome/${nome_produto}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/nome/${nome_produto}`);
                 setProduto(resp.data.result);
             } catch (error) {
                 console.error('Erro ao buscar dados do produto.', error);
@@ -95,7 +95,7 @@ function Produto() {
         // Função assíncrona para buscar pedidos
         const fetchAvaliacao = async () => {
             try {
-                const resp = await axios.get(`http://localhost:3001/aurea/pedido/avaliacao-produto/${produto.id_produto}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/avaliacao-produto/${produto.id_produto}`);
                 setAvaliacao(resp.data.result);
             } catch (error) {
                 console.error('Erro ao listar avaliações', error);
@@ -105,7 +105,7 @@ function Produto() {
         // Função assíncrona para buscar clientes
         const fetchDadosCliente = async () => {
             try {
-                const resp = await axios.get('http://localhost:3001/aurea/usuarios');
+                const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuarios');
                 setClientes(resp.data.result); // Salvando clientes no estado
             } catch (error) {
                 setError('Erro ao obter dados dos clientes.');
@@ -135,7 +135,7 @@ function Produto() {
             }
 
             // Verifica no backend se o produto já está na lista "Amei" do usuário
-            const resp = await axios.get(`http://localhost:3001/aurea/lista-amei/${id_user}`);
+            const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}`);
             const listaBackend = resp.data;
 
             // Verifica se o produto já está na lista "Amei" do backend
@@ -144,7 +144,7 @@ function Produto() {
             }
 
             // Envia o pedido para o backend para adicionar o produto à lista "Amei"
-            const response = await axios.post('http://localhost:3001/aurea/lista-amei', {
+            const response = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei', {
                 id_user: id_user,
                 id_produto: produto.id_produto, // id_produto extraído de ProdutoGeral
             });
@@ -175,7 +175,7 @@ function Produto() {
             const id_user = user.id_user;
 
             // Faz a requisição para remover do backend e do localStorage
-            await axios.delete(`http://localhost:3001/aurea/lista-amei/${id_user}/${produtoId}`);
+            await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}/${produtoId}`);
 
             // Atualiza o localStorage
             const listaAtual = JSON.parse(localStorage.getItem(`listaAmei_${id_user}`)) || [];
@@ -210,14 +210,14 @@ function Produto() {
                 return;
             }
 
-            const resp = await axios.get(`http://localhost:3001/aurea/carrinho/${id_user}`);
+            const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${id_user}`);
             const listaBackend = resp.data;
 
             if (listaBackend.some((item) => item.id_produto === produto.id_produto)) {
                 return; // Produto já está no carrinho no backend
             }
 
-            await axios.post('http://localhost:3001/aurea/carrinho', {
+            await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho', {
                 id_user: id_user,
                 id_produto: produto.id_produto,
                 qtd_produto_carrinho: 1,
@@ -241,7 +241,7 @@ function Produto() {
     const handleRemoveFromCarrinho = async (produtoId) => {
         try {
             // Faz a requisição para o backend para remover o produto do carrinho
-            await axios.delete(`http://localhost:3001/aurea/carrinho/${user.id_user}/${produtoId}`);
+            await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}/${produtoId}`);
 
             // Atualiza o localStorage
             const listaAtual = JSON.parse(localStorage.getItem(`carrinho${user.id_user}`)) || [];
@@ -307,7 +307,7 @@ function Produto() {
         };
 
         try {
-            const resp = await axios.post(`http://localhost:3001/aurea/aviso/${produtoAviso.nome_produto}`, dadosEnvio);
+            const resp = await axios.post(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/aviso/${produtoAviso.nome_produto}`, dadosEnvio);
 
             if (resp.status === 200 && resp.data.message === 'E-mail enviado com sucesso!') {
                 alert('E-mail enviado com sucesso!');
@@ -328,7 +328,7 @@ function Produto() {
             <TituloProduto>{produto.nome_produto}</TituloProduto>
             <ContainerProduto>
                 <ContainerDescricao>
-                    <ImgProdutospec src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                    <ImgProdutospec src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                     <DivDescricao>
                         <Subtitulo>{produto.nome_produto}</Subtitulo>
                         {produto.categoria_produto === 'promocoes' ? (
@@ -343,22 +343,22 @@ function Produto() {
                         <TxtGerais>Quantidade restante: {produto.qtd_produto}</TxtGerais>
                         <UlVariacao>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                             <li>
-                                <ImagemVariacao src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                             </li>
                         </UlVariacao>
                         {produto.qtd_produto === 0 ? (

@@ -179,7 +179,7 @@ function FaleConosco() {
 
         try {
             // Faz a requisição POST para a API, enviando os dados com o axios
-            const resp = await axios.post('http://localhost:3001/aurea/duvida', dadosEnvio);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/duvida', dadosEnvio);
 
             // Verifica se a resposta da API foi bem-sucedida (código 200)
             if (resp.status === 200) {

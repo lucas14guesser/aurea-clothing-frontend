@@ -84,7 +84,7 @@ function DetalhesPedido() {
 
         try {
             // Faz a requisição POST para a API, enviando os dados com o axios
-            const resp = await axios.post('http://localhost:3001/aurea/solicitacao-troca', dadosEnvio);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/solicitacao-troca', dadosEnvio);
 
             // Verifica se a resposta da API foi bem-sucedida (código 200)
             if (resp.status === 200) {
@@ -122,7 +122,7 @@ function DetalhesPedido() {
 
         try {
             // Faz a requisição POST para a API, enviando os dados com o axios
-            const resp = await axios.post('http://localhost:3001/aurea/solicitacao-devolucao', dadosEnvio);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/solicitacao-devolucao', dadosEnvio);
 
             // Verifica se a resposta da API foi bem-sucedida (código 200)
             if (resp.status === 200) {
@@ -169,7 +169,7 @@ function DetalhesPedido() {
         }
 
         try {
-            const resp = await axios.post('http://localhost:3001/aurea/pedido/avaliar', dadosAvaliacao);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/avaliar', dadosAvaliacao);
             if (resp.data.result) {
                 alert('Produto avaliado com sucesso!');
 
@@ -188,7 +188,7 @@ function DetalhesPedido() {
     useEffect(() => {
         const fetchDadosPedidoPorID = async () => {
             try {
-                const resp = await axios.get(`http://localhost:3001/aurea/pedido/${id_pedido}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/${id_pedido}`);
                 setPedidos(resp.data.result);
             } catch (error) {
                 console.error('Erro ao buscar dados do pedido.', error);
@@ -205,7 +205,7 @@ function DetalhesPedido() {
     useEffect(() => {
         const fetchDadosItensPedidoPorID = async () => {
             try {
-                const resp = await axios.get(`http://localhost:3001/aurea/itens-pedido/${id_pedido}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/itens-pedido/${id_pedido}`);
                 setItensPedido(resp.data.result);
             } catch (error) {
                 console.error('Erro ao buscar dados do pedido.', error);
@@ -222,7 +222,7 @@ function DetalhesPedido() {
     useEffect(() => {
         const fetchProdutos = async () => {
             try {
-                const fetchProdutosResponse = await axios.get(`http://localhost:3001/aurea/produto/pedido/${id_pedido}`);
+                const fetchProdutosResponse = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/produto/pedido/${id_pedido}`);
                 setProdutos(fetchProdutosResponse.data.result);
             } catch (error) {
                 console.error('Erro ao buscar produtos.', error);
@@ -270,7 +270,7 @@ function DetalhesPedido() {
                     {produtos && produtos.length > 0 ? (
                         produtos.map((produto, index) => (
                             <InformacaoDetalhesPedido key={index}>
-                                <ImgPedido src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImgPedido src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
                                 <TxtGerais style={{ color: '#A87826' }}>{produto.nome_produto}</TxtGerais>
                                 <TxtGerais>Cor: {produto.cor_produto}</TxtGerais>
                                 <TxtGerais>Tamanho: {produto.tamanho_produto}</TxtGerais>

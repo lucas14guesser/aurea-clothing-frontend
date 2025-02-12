@@ -37,7 +37,7 @@ function RedefinirPass() {
         }
 
         try {
-            const resp = await axios.put(`http://localhost:3001/aurea/usuario/senha/redefinir-senha`, {
+            const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/senha/redefinir-senha`, {
                 token,
                 senha_user: senhaRed
             });

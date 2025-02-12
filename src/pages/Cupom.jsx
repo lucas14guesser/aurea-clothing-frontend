@@ -38,7 +38,7 @@ function Cupom() {
     useEffect(() => {
         const fetchCupom = async () => {
             try {
-                const resp = await axios.get('http://localhost:3001/aurea/listar-todos-cupom');
+                const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/listar-todos-cupom');
                 setCupom(resp.data.result);
                 setFilterCupom(resp.data.result);
             } catch (error) {
@@ -68,7 +68,7 @@ function Cupom() {
         }
 
         try {
-            const resp = await axios.post('http://localhost:3001/aurea/gerar-cupom', dadosCupom);
+            const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/gerar-cupom', dadosCupom);
 
             if (resp.data.result) {
                 alert('Cupom de desconto gerado com sucesso!');
@@ -92,7 +92,7 @@ function Cupom() {
         }
 
         try {
-            const resp = await axios.delete(`http://localhost:3001/aurea/deletar-cupom/${nomeCupomExcluir}`);
+            const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/deletar-cupom/${nomeCupomExcluir}`);
             if (resp.data.result) {
                 setNomeCupomExcluir('');
                 alert('Cupom de desconto excluído com sucesso!');

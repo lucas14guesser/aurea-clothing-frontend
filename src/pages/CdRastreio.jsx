@@ -55,7 +55,7 @@ function CdRastreio() {
     useEffect(() => {
         const fetchPedidos = async () => {
             try {
-                const resp = await axios.get('http://localhost:3001/aurea/pedidos');
+                const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedidos');
                 setPedidos(resp.data.result);
                 setFilterPedidos(resp.data.result);
             } catch (error) {
@@ -84,7 +84,7 @@ function CdRastreio() {
         }
 
         try {
-            const resp = await axios.put(`http://localhost:3001/aurea/pedido/cd-rastreio/${idPedido}`, dadosRastreio);
+            const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedido/cd-rastreio/${idPedido}`, dadosRastreio);
 
             if (resp.data.result) {
                 alert('Código de rastreio adicionado com sucesso!');

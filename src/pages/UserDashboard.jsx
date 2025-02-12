@@ -59,7 +59,7 @@ function UserDashBoard() {
 
         if (editField) {
             try {
-                const resp = await axios.put(`http://localhost:3001/aurea/usuario/${user.id_user}`, dadosUser)
+                const resp = await axios.put(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/usuario/${user.id_user}`, dadosUser)
 
                 if (resp.data.error) {
                     setEditError(resp.data.error);
@@ -78,7 +78,7 @@ function UserDashBoard() {
     useEffect(() => {
         const fetchDadosPedido = async () => {
             try {
-                const resp = await axios.get('http://localhost:3001/aurea/pedidos');
+                const resp = await axios.get('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/pedidos');
                 if (resp.data.result) {
                     setPedidos(resp.data.result);
                 }

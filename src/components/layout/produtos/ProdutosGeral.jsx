@@ -152,6 +152,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
         { nome: 'roxo', cor: '#A347FF' },
         { nome: 'verde', cor: '#00AD1D' },
         { nome: 'vermelho', cor: '#8C0000' },
+        { nome: 'lilás', cor: '#C8A2C8' },
     ];
 
     const handleListaAmei = async (produto) => {
@@ -170,7 +171,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
             }
 
             // Verifica no backend se o produto já está na lista "Amei" do usuário
-            const resp = await axios.get(`http://localhost:3001/aurea/lista-amei/${id_user}`);
+            const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}`);
             const listaBackend = resp.data;
 
             // Verifica se o produto já está na lista "Amei" do backend
@@ -179,7 +180,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
             }
 
             // Envia o pedido para o backend para adicionar o produto à lista "Amei"
-            const response = await axios.post('http://localhost:3001/aurea/lista-amei', {
+            const response = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei', {
                 id_user: id_user,
                 id_produto: produto.id_produto, // id_produto extraído de ProdutoGeral
             });
@@ -210,7 +211,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
             const id_user = user.id_user;
 
             // Faz a requisição para remover do backend e do localStorage
-            await axios.delete(`http://localhost:3001/aurea/lista-amei/${id_user}/${produtoId}`);
+            await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/lista-amei/${id_user}/${produtoId}`);
 
             // Atualiza o localStorage
             const listaAtual = JSON.parse(localStorage.getItem(`listaAmei_${id_user}`)) || [];
@@ -248,14 +249,14 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
                     return;
                 }
 
-                const resp = await axios.get(`http://localhost:3001/aurea/carrinho/${id_user}`);
+                const resp = await axios.get(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${id_user}`);
                 const listaBackend = resp.data;
 
                 if (listaBackend.some((item) => item.id_produto === produto.id_produto)) {
                     return; // Produto já está no carrinho no backend
                 }
 
-                await axios.post('http://localhost:3001/aurea/carrinho', {
+                await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho', {
                     id_user: id_user,
                     id_produto: produto.id_produto,
                     qtd_produto_carrinho: 1,
@@ -280,7 +281,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
     const handleRemoveFromCarrinho = async (produtoId) => {
         try {
             // Faz a requisição para o backend para remover o produto do carrinho
-            await axios.delete(`http://localhost:3001/aurea/carrinho/${user.id_user}/${produtoId}`);
+            await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/carrinho/${user.id_user}/${produtoId}`);
 
             // Atualiza o localStorage
             const listaAtual = JSON.parse(localStorage.getItem(`carrinho${user.id_user}`)) || [];
@@ -433,7 +434,7 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
                         {/* Mapeia apenas os itens da página atual */}
                         {currentItems.map((produto) => (
                             <ListaItemProduto key={produto.id_produto} onClick={() => handleLinkDetail(produto.nome_produto)}>
-                                {produto.img_produto && <ImgProduto src={`http://localhost:3001/uploads/${produto.img_produto}`} alt={produto.nome_produto} />}
+                                {produto.img_produto && <ImgProduto src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />}
                                 <ContainerEspecificacoesProduto>
                                     {produto.nome_produto && <NomeProduto>{produto.nome_produto}</NomeProduto>}
                                     <DivColumn>

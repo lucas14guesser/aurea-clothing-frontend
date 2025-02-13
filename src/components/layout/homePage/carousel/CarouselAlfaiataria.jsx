@@ -75,7 +75,7 @@ function CarouselAlfaiataria() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "alfaiataria"
-                const alfaiataria = produtos.filter((produto) => produto.categoria_produto === 'alfaiataria');
+                const alfaiataria = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'alfaiataria');
 
                 const produtosCompletos = preencherComFallback(alfaiataria);
                 setProdutosAlfaiataria(produtosCompletos);

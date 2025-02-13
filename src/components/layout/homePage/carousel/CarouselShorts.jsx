@@ -70,7 +70,7 @@ function CarouselShorts() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "shorts"
-                const shorts = produtos.filter((produto) => produto.categoria_produto === 'shorts');
+                const shorts = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'shorts');
 
                 const produtosCompletos = preencherComFallback(shorts);
                 setProdutosShorts(produtosCompletos);

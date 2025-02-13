@@ -85,7 +85,7 @@ function CarouselLancamentos() {
         setProdutos(produtos);
 
         // Filtrando os produtos da categoria "Lancamento"
-        const lancamento = produtos.filter((produto) => produto.categoria_produto === 'lancamentos');
+        const lancamento = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'lancamentos');
         // Preenche com fallback se necessário
         const produtosCompletos = preencherComFallback(lancamento);
         setProdutosLancamentos(produtosCompletos);

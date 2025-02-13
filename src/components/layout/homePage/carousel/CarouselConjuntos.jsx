@@ -72,7 +72,7 @@ function CarouselConjuntos() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "conjuntos"
-                const conjuntos = produtos.filter((produto) => produto.categoria_produto === 'conjuntos');
+                const conjuntos = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'conjuntos');
 
                 const produtosCompletos = preencherComFallback(conjuntos);
                 setProdutosConjuntos(produtosCompletos);

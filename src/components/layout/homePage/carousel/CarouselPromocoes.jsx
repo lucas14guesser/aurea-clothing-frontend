@@ -70,7 +70,7 @@ function CarouselPromocoes() {
         setProdutos(produtos);
 
         // Filtrando os produtos da categoria "promocoes"
-        const promocoes = produtos.filter((produto) => produto.categoria_produto === 'promocoes');
+        const promocoes = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'promocoes');
 
         const produtosCompletos = preencherComFallback(promocoes);
         setProdutosPromocoes(produtosCompletos);

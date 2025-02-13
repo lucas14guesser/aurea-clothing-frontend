@@ -71,7 +71,7 @@ function CarouselMacaquinhos() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "macaquinhos"
-                const macaquinhos = produtos.filter((produto) => produto.categoria_produto === 'macaquinhos');
+                const macaquinhos = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'macaquinhos');
 
                 const produtosCompletos = preencherComFallback(macaquinhos);
                 setProdutosMacaquinhos(produtosCompletos);

@@ -70,7 +70,7 @@ function CarouselAcessorios() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "acessorios"
-                const acessorios = produtos.filter((produto) => produto.categoria_produto === 'acessorios');
+                const acessorios = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'acessorios');
                 // Preenche com fallback se necessário
                 const produtosCompletos = preencherComFallback(acessorios);
                 setProdutosAcessorios(produtosCompletos);

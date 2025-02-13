@@ -71,7 +71,7 @@ function CarouselVestidos() {
                 setProdutos(produtos);
 
                 // Filtrando os produtos da categoria "vestidos"
-                const vestidos = produtos.filter((produto) => produto.categoria_produto === 'vestidos');
+                const vestidos = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'vestidos');
 
                 const produtosCompletos = preencherComFallback(vestidos);
                 setProdutosVestidos(produtosCompletos);

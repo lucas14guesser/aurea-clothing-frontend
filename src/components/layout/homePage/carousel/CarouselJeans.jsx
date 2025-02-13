@@ -71,7 +71,7 @@ function CarouselJeans() {
         setProdutos(produtos);
 
         // Filtrando os produtos da categoria "jeans"
-        const jeans = produtos.filter((produto) => produto.categoria_produto === 'jeans');
+        const jeans = produtos.filter((produto) => produto.categoria_produto.toLowerCase() === 'jeans');
 
         const produtosCompletos = preencherComFallback(jeans);
         setProdutosJeans(produtosCompletos);

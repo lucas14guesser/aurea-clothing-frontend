@@ -90,9 +90,9 @@ export const preencherComFallback = (produtos) => {
 // Função para definir a URL da imagem, utilizando uma imagem de fallback quando não houver imagem
 export const getImageUrl = (imgProduto) => {
   if (imgProduto) {
-    return `http://localhost:3001/uploads/${imgProduto}`;
+    return `https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${imgProduto}`;
   } else {
     // URL da imagem de fallback
-    return 'http://localhost:3001/uploads/fallback-img.png';
+    return 'https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/fallback-img.png';
   }
 };

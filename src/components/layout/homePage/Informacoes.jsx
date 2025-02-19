@@ -24,7 +24,7 @@ function Informacoes() {
                 <TxtInfo>
                     <strong style={{fontWeight: '500'}}>Parcelamento</strong>
                     <br />
-                    Parcelamos em até 12x
+                    Parcelamos em até 3x sem juros
                 </TxtInfo>
             </SubContainerInformacao>
             <SubContainerInformacao>

@@ -45,36 +45,6 @@ function Informacoes() {
                 </LinkInfoInfo>
             </ContainerInfoInfo>
 
-            {/* Seção de informações de Localização */}
-            <ContainerInfoInfo>
-                <TxtGerais>
-                    Localização
-                </TxtGerais>
-                {/* Link para abrir o Google Maps com o endereço da loja */}
-                <LinkInfoInfo
-                    to='https://maps.app.goo.gl/Qvctwicb3V2scRGR7'
-                    target='_blank'
-                >
-                    {/* Ícone de localização seguido pelo endereço completo */}
-                    <GoldenIcon><IoLocationOutline /></GoldenIcon>
-                    <TxtGerais>Av. das Tipuanas, 337 - sala 9 - Madri, Palhoça - SC, 88131-300.</TxtGerais>
-                </LinkInfoInfo>
-            </ContainerInfoInfo>
-
-            {/* Seção de informações do Horário de atendimento */}
-            <ContainerInfoInfo>
-                <TxtGerais>
-                    Horário de atendimento
-                </TxtGerais>
-                {/* Horário de funcionamento da loja com ícone de relógio */}
-                <TxtInfoInfo>
-                    <GoldenIcon><PiClockLight /></GoldenIcon>
-                    <TxtGerais>Seg a sex das 13:30h às 18:00h
-                        <br />
-                        Sab 09:30h às 13:30h
-                    </TxtGerais>
-                </TxtInfoInfo>
-            </ContainerInfoInfo>
         </SubContainer>
     )
 }

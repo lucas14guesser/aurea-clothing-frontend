@@ -32,7 +32,7 @@ function Banner() {
     return (
         <ContainerBanner>
             <ContainerCarouselBanner $slideIndex={counterSlideBanner}>
-                {banners.map((banner) => (
+                {Array.isArray(banners) && banners.map((banner) => (
                     <ImagemCarouselBanner
                         src={banner.img_banner} // Agora está pegando a URL correta do Cloudinary
                         alt={banner.nome_banner}

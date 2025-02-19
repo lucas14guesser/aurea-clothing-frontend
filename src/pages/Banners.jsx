@@ -82,7 +82,14 @@ function Banners() {
         setNomeBanner('');
 
         // Atualizar a lista de banners com o novo inserido
-        setBanners([...banners, resp.data.result]);
+        const newBanner = {
+          img_banner: resp.data.result.img_banner, // A URL da imagem
+          nome_banner: nomeBanner, // O nome do banner
+          public_id: resp.data.result.public_id, // O public_id
+          id_banner: resp.data.result.id_banner // ID retornado do backend
+        };
+        setBanners([...banners, newBanner]);
+        setFilterBanner([...filterBanner, newBanner]); // Também atualiza os banners filtrados
       } else {
         alert('Erro ao inserir banner');
       }
@@ -94,16 +101,16 @@ function Banners() {
   // Função para excluir um banner baseado no ID
   const handleExcluirBanner = async (e) => {
     e.preventDefault();
-  
+
     if (!nomeBanner) {
       alert('Por favor, insira o nome do arquivo do banner'); // Valida se o nome foi inserido
       return;
     }
-  
+
     try {
       // Envia uma requisição DELETE para o servidor passando o nome do arquivo do banner
       const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner/${nomeBanner}`);
-      
+
       if (resp.data.result) {
         setNomeBanner(''); // Limpa o campo após a exclusão
         alert('Banner excluído com sucesso!'); // Mensagem de sucesso

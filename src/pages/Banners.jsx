@@ -65,49 +65,54 @@ function Banners() {
     e.preventDefault();
 
     const formDataBanner = new FormData();
-
-    formDataBanner.append('img_banner', imgBanner); // Adiciona a imagem ao FormData
+    formDataBanner.append('img_banner', imgBanner);
     formDataBanner.append('nome_banner', nomeBanner);
 
     try {
-      // Envia a imagem para o servidor usando axios (POST)
+      // Envia o arquivo para o backend e recebe a URL da imagem no Cloudinary
       const resp = await axios.post('https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner', formDataBanner, {
         headers: {
-          'Content-Type': 'multipart/form-data', // Indica que estamos enviando arquivos
+          'Content-Type': 'multipart/form-data',
         },
       });
+
       if (resp.data.result) {
-        alert('Banner inserido com sucesso!'); // Exibe mensagem de sucesso
-        setImgBanner(''); // Limpa o campo de imagem após a inserção
+        alert('Banner inserido com sucesso!');
+        setImgBanner('');
+        setNomeBanner('');
+
+        // Atualizar a lista de banners com o novo inserido
+        setBanners([...banners, resp.data.result]);
       } else {
-        alert('Erro ao inserir banner'); // Exibe mensagem de erro caso a inserção falhe
+        alert('Erro ao inserir banner');
       }
     } catch (error) {
-      console.error('Erro ao inserir banner.', error); // Log de erro
+      console.error('Erro ao inserir banner.', error);
     }
   };
 
   // Função para excluir um banner baseado no ID
   const handleExcluirBanner = async (e) => {
     e.preventDefault();
-
-    if (!idBanner || isNaN(idBanner)) {
-      alert('Por favor, insira um ID de banner válido'); // Valida se o ID é um número
+  
+    if (!nomeBanner) {
+      alert('Por favor, insira o nome do arquivo do banner'); // Valida se o nome foi inserido
       return;
     }
-
+  
     try {
-      // Envia uma requisição DELETE para o servidor
-      const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner/${idBanner}`);
+      // Envia uma requisição DELETE para o servidor passando o nome do arquivo do banner
+      const resp = await axios.delete(`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/aurea/banner/${nomeBanner}`);
+      
       if (resp.data.result) {
-        setIdBanner(''); // Limpa o campo de ID após a exclusão
+        setNomeBanner(''); // Limpa o campo após a exclusão
         alert('Banner excluído com sucesso!'); // Mensagem de sucesso
       } else {
-        alert('Erro ao excluir Banner.'); // Mensagem de erro caso a exclusão falhe
+        alert('Erro ao excluir o banner.'); // Mensagem de erro caso a exclusão falhe
       }
     } catch (error) {
       console.error('Erro ao excluir Banner', error); // Log de erro
-      alert('Erro ao excluir Banner.'); // Mensagem de erro
+      alert('Erro ao excluir o banner.'); // Mensagem de erro
     }
   };
 
@@ -228,7 +233,7 @@ function Banners() {
                       <td>{banner.id_banner}</td>
                       <td>
                         <ImgTableBanners
-                          src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/bannerUpload/${banner.img_banner}`}
+                          src={banner.img_banner} // Agora, `img_banner` será a URL do Cloudinary
                           alt={banner.nome_banner}
                           title={banner.nome_banner}
                         />

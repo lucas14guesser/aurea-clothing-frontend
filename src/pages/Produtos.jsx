@@ -69,7 +69,7 @@ function Produtos() {
   const [tipoTamanho, setTipoTamanho] = useState('');
 
   const subcategorias = {
-    alfaiataria: ['Calças', 'Blazer', 'Shorts'],
+    alfaiataria: ['Calças', 'Blazer', 'Short'],
     acessorios: ['Bolsas', 'Bonés', 'Cintos'],
   };
 

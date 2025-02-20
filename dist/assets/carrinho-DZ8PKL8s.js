@@ -1,4 +1,4 @@
-import{d as n,L as ye,a as c,j as e,T as _e,g as y,S as Ce,b as ve,k as je}from"./GlobalStyles-Dqpp29B9.js";import{U as Fe}from"./userContext-D66xfPlX.js";import{G as ae,a as f}from"./axios-DnYME9kn.js";import{c as Ae}from"./index-BDeTybOB.js";import{f as A}from"./Functions-D5_z5ReH.js";const Ee=n.div`
+import{d as n,L as ye,a as c,j as e,T as _e,g as y,S as Ce,b as ve,k as je}from"./GlobalStyles-Dqpp29B9.js";import{U as Fe}from"./userContext-D66xfPlX.js";import{G as ae,a as f}from"./axios-DnYME9kn.js";import{c as Ae}from"./index-BDeTybOB.js";import{f as A}from"./Functions-C5TbUWjh.js";const Ee=n.div`
 margin: 2rem 17rem;
 
   @media (max-width: 430px) {

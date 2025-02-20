@@ -434,7 +434,10 @@ const ProdutosGeral = ({ titulo, subtitulo, produtos }) => {
                         {/* Mapeia apenas os itens da página atual */}
                         {currentItems.map((produto) => (
                             <ListaItemProduto key={produto.id_produto} onClick={() => handleLinkDetail(produto.nome_produto)}>
-                                {produto.img_produto && <ImgProduto src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />}
+                                {/* Atualizando a URL da imagem para usar o Cloudinary */}
+                                {produto.img_produto && (
+                                    <ImgProduto src={produto.img_produto} alt={produto.nome_produto} />
+                                )}
                                 <ContainerEspecificacoesProduto>
                                     {produto.nome_produto && <NomeProduto>{produto.nome_produto}</NomeProduto>}
                                     <DivColumn>

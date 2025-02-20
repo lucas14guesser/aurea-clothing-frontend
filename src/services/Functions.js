@@ -94,6 +94,6 @@ export const getImageUrl = (imgProduto) => {
     return imgProduto;
   } else {
     // URL da imagem de fallback
-    return 'https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/fallback-img.png';
+    return 'https://res.cloudinary.com/dnmkzbbhq/image/upload/v1740071033/fallbackproduto_khrvuh.jpg';
   }
 };

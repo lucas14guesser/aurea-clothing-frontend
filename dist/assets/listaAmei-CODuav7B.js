@@ -1,4 +1,4 @@
-import{d as v,a as d,f as w,j as o,g}from"./GlobalStyles-Dqpp29B9.js";import{j as B,k as I,l as L,N as F,m as J,n as S}from"./CategoriaProdutosStyle-Bi6KNH5F.js";import{T as O,b as R,c as T}from"./index-CJGrLZTX.js";import{U as q}from"./userContext-D66xfPlX.js";import{a as u}from"./axios-DnYME9kn.js";import{I as z,P as M,c as D,C as U,B as C}from"./ProdutoStyles-CJ63-lzv.js";import{f as _,b as V}from"./Functions-CUekD-7M.js";import{B as k}from"./HomePageStyles-CJMC4Gvw.js";const G=v.div`
+import{d as v,a as d,f as w,j as o,g}from"./GlobalStyles-Dqpp29B9.js";import{j as B,k as I,l as L,N as F,m as J,n as S}from"./CategoriaProdutosStyle-Bi6KNH5F.js";import{T as O,b as R,c as T}from"./index-CJGrLZTX.js";import{U as q}from"./userContext-D66xfPlX.js";import{a as u}from"./axios-DnYME9kn.js";import{I as z,P as M,c as D,C as U,B as C}from"./ProdutoStyles-CJ63-lzv.js";import{f as _,b as V}from"./Functions-Db1ipCHc.js";import{B as k}from"./HomePageStyles-CJMC4Gvw.js";const G=v.div`
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;

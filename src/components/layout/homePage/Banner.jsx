@@ -42,7 +42,7 @@ function Banner() {
                 {Array.isArray(banners) && banners.map((banner) => {
                     return (
                         <ImagemCarouselBanner
-                            src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/bannerUpload/${banner.img_banner}`}
+                            src={banner.img_banner} // Agora usa a URL correta
                             alt={banner.nome_banner}
                             key={banner.id_banner}
                         />

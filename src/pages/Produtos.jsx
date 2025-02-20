@@ -318,6 +318,7 @@ function Produtos() {
                     <option value="branco">Branco</option>
                     <option value="cinza">Cinza</option>
                     <option value="laranja">Laranja</option>
+                    <option value="lilás">Lilás</option>
                     <option value="marrom">Marrom</option>
                     <option value="nude">Nude</option>
                     <option value="preto">Preto</option>
@@ -431,15 +432,6 @@ function Produtos() {
                     <option value="1">À vista</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
                   </SelectProdutos>
                 </LabelInputProdutos>
                 <SectionBtnProdutos>
@@ -481,15 +473,6 @@ function Produtos() {
                     <option value="1">À vista</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
                   </SelectProdutos>
                 </LabelInputProdutos>
 

@@ -328,7 +328,7 @@ function Produto() {
             <TituloProduto>{produto.nome_produto}</TituloProduto>
             <ContainerProduto>
                 <ContainerDescricao>
-                    <ImgProdutospec src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                    <ImgProdutospec src={produto.img_produto} alt={produto.nome_produto} />
                     <DivDescricao>
                         <Subtitulo>{produto.nome_produto}</Subtitulo>
                         {produto.categoria_produto === 'promocoes' ? (
@@ -341,26 +341,6 @@ function Produto() {
                         )}
                         <TxtGerais>{formatParcelas(produto.parcela_produto)}</TxtGerais>
                         <TxtGerais>Quantidade restante: {produto.qtd_produto}</TxtGerais>
-                        <UlVariacao>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                            <li>
-                                <ImagemVariacao src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
-                            </li>
-                        </UlVariacao>
                         {produto.qtd_produto === 0 ? (
                             <ContainerAviseFalta>
                                 <p>Produto indisponível</p>

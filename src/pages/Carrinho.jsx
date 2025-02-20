@@ -609,7 +609,7 @@ function Carrinho() {
                                             {item.produto ? (
                                                 <ContainerImgProduto>
                                                     <ImageProdutoCarrinho
-                                                        src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${item.produto.img_produto}`}
+                                                        src={item.produto.img_produto} // Use a URL completa do Cloudinary diretamente
                                                         alt={`Imagem do produto: ${item.produto.nome_produto}`}
                                                     />
                                                     <div>

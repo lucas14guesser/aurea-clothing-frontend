@@ -270,7 +270,10 @@ function DetalhesPedido() {
                     {produtos && produtos.length > 0 ? (
                         produtos.map((produto, index) => (
                             <InformacaoDetalhesPedido key={index}>
-                                <ImgPedido src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} />
+                                <ImgPedido
+                                    src={produto.img_produto} // Use a URL completa do Cloudinary diretamente
+                                    alt={produto.nome_produto}
+                                />
                                 <TxtGerais style={{ color: '#A87826' }}>{produto.nome_produto}</TxtGerais>
                                 <TxtGerais>Cor: {produto.cor_produto}</TxtGerais>
                                 <TxtGerais>Tamanho: {produto.tamanho_produto}</TxtGerais>

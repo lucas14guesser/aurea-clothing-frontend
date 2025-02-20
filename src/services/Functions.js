@@ -89,8 +89,9 @@ export const preencherComFallback = (produtos) => {
 
 // Função para definir a URL da imagem, utilizando uma imagem de fallback quando não houver imagem
 export const getImageUrl = (imgProduto) => {
-  if (imgProduto) {
-    return `https://res.cloudinary.com/dnmkzbbhq/image/upload/${imgProduto}`;
+  if (imgProduto && imgProduto.startsWith("http")) {
+    // Retorna a URL da imagem do Cloudinary se estiver disponível
+    return imgProduto;
   } else {
     // URL da imagem de fallback
     return 'https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/fallback-img.png';

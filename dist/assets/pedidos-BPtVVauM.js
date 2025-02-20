@@ -1,4 +1,4 @@
-import{d as t,L as _,a as s,j as e,R as f,T as j,k as w,g as n}from"./GlobalStyles-Dqpp29B9.js";import{U as v}from"./userContext-D66xfPlX.js";import{a as z}from"./axios-DnYME9kn.js";import{R as P,M as D,L as I,B}from"./UserDashboardStyles-BUujLACN.js";import{I as S,a as U}from"./index-CVGnD8mp.js";import{a as E}from"./Functions-C5TbUWjh.js";import{T}from"./PedidoStyles-DLKgW4TH.js";import{C as L,B as b}from"./ProdutoStyles-Cz6hDj1C.js";const R=t.div`
+import{d as t,L as _,a as s,j as e,R as f,T as j,k as w,g as n}from"./GlobalStyles-Dqpp29B9.js";import{U as v}from"./userContext-D66xfPlX.js";import{a as z}from"./axios-DnYME9kn.js";import{R as P,M as D,L as I,B}from"./UserDashboardStyles-BUujLACN.js";import{I as S,a as U}from"./index-CVGnD8mp.js";import{a as E}from"./Functions-CUekD-7M.js";import{T}from"./PedidoStyles-DLKgW4TH.js";import{C as L,B as b}from"./ProdutoStyles-CJ63-lzv.js";const R=t.div`
 display: flex;
 justify-content: center;
 flex-direction: column;

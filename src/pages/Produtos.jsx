@@ -565,7 +565,9 @@ function Produtos() {
                       {produto.id_produto}
                     </Link>
                   </td>
-                  <td><ImgTable src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`} alt={produto.nome_produto} /></td>
+                  <td>
+                    <ImgTable src={produto.img_produto} alt={produto.nome_produto} />
+                  </td>
                   <td>{produto.nome_produto}</td>
                   <td>{produto.categoria_produto}</td>
                   <td>

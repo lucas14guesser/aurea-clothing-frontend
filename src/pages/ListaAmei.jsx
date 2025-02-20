@@ -164,7 +164,7 @@ function ListaAmei() {
                     ListaAmeiPaginada.map((produto, index) => (
                         <ListaItemProduto key={`${produto.id_produto}-${index}`} onClick={() => handleLinkDetail(produto.nome_produto)}>  {/* Usando id_produto + index para garantir unicidade */}
                             <ImgProduto
-                                src={`https://test-aureaclothing-backend-466bc65ebfec.herokuapp.com/uploads/${produto.img_produto}`}
+                                src={produto.img_produto} // Use a URL completa do Cloudinary diretamente
                                 alt={produto.nome_produto}
                             />
                             <ContainerEspecificacoesProduto>
